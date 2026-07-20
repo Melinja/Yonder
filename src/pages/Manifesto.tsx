@@ -1,5 +1,5 @@
 import React from 'react'
-import communityImg from '../imports/image-7.png'
+import bgImg from '../imports/image-7.png'
 
 // ── Type scale ───────────────────────────────────────────────────
 // XL  96px  — Hero, Closing
@@ -18,9 +18,9 @@ const dim3    = 'rgba(237,237,242,0.14)'
 const bg      = '#06060A'
 const panel   = '#0D0D12'
 
-function Overline({ children }: { children: string }) {
+function Overline({ children, large }: { children: string; large?: boolean }) {
   return (
-    <p style={{ fontFamily: sans, fontSize: 10, color: lime, letterSpacing: '0.3em', marginBottom: 28 }}>
+    <p style={{ fontFamily: sans, fontSize: large ? 14 : 10, fontWeight: large ? 600 : 400, color: lime, letterSpacing: '0.22em', marginBottom: large ? 36 : 28 }}>
       {children}
     </p>
   )
@@ -82,9 +82,13 @@ export default function Manifesto() {
       </section>
 
       {/* ── AKT II ───────────────────────────────────────── */}
-      <section style={{ padding: '72px 48px' }}>
-        <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-          <Overline>GENAU HIER BEGINNT YONDER</Overline>
+      <section style={{ position: 'relative', padding: '72px 48px' }}>
+        <div style={{ position: 'absolute', inset: 0, overflow: 'hidden' }}>
+          <img src={bgImg} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 30%', opacity: 0.12 }} />
+          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(6,6,10,0.6) 0%, rgba(6,6,10,0.85) 100%)' }} />
+        </div>
+        <div style={{ maxWidth: 1200, margin: '0 auto', position: 'relative', zIndex: 1 }}>
+          <Overline large>GENAU HIER BEGINNT YONDER</Overline>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '48px 64px', maxWidth: 900 }}>
             <div>
               <p style={{ fontFamily: display, fontSize: 20, fontWeight: 700, letterSpacing: '-0.025em', lineHeight: 1.2, color: white, marginBottom: 8 }}>
@@ -137,7 +141,7 @@ export default function Manifesto() {
       {/* ── AKT III ──────────────────────────────────────── */}
       <section style={{ backgroundColor: panel, borderTop: '1px solid rgba(255,255,255,0.07)', padding: '72px 48px' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-          <Overline>WIR GLAUBEN AN FORTSCHRITT</Overline>
+          <Overline large>WIR GLAUBEN AN FORTSCHRITT</Overline>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 2, marginBottom: 40 }}>
             {[
               [dim3, 'Nicht um jeden Preis.'],
