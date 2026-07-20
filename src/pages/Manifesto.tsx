@@ -1,5 +1,5 @@
 import React from 'react'
-import communityImg from '../imports/image-6.png'
+import communityImg from '../imports/image-7.png'
 
 // ── Type scale ───────────────────────────────────────────────────
 // XL  96px  — Hero, Closing
