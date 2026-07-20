@@ -1,4 +1,5 @@
 import { useState } from 'react'
+
 import SectionLabel from '../components/SectionLabel'
 import YonderMark from '../components/YonderMark'
 
@@ -43,6 +44,30 @@ const STATS = [
 export default function Community() {
   const [email, setEmail] = useState('')
   const [submitted, setSubmitted] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
+
+  const handleSubmit = async () => {
+    if (!email.includes('@')) return
+    setLoading(true)
+    setError('')
+    try {
+      const res = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      })
+      if (res.ok) {
+        setSubmitted(true)
+      } else {
+        setError('Etwas ist schiefgelaufen. Bitte versuche es nochmal.')
+      }
+    } catch {
+      setError('Etwas ist schiefgelaufen. Bitte versuche es nochmal.')
+    } finally {
+      setLoading(false)
+    }
+  }
 
   return (
     <div style={{ backgroundColor: '#06060A' }}>
@@ -347,6 +372,11 @@ export default function Community() {
             Trage dich ein und wir melden uns mit allem, was du wissen musst.
           </p>
 
+          {error && (
+            <p style={{ color: '#ff6b6b', fontFamily: "'DM Sans', sans-serif", fontSize: 13, marginBottom: 12 }}>
+              {error}
+            </p>
+          )}
           {submitted ? (
             <div className="flex items-center gap-4">
               <YonderMark size={20} />
@@ -364,7 +394,7 @@ export default function Community() {
                 placeholder="deine@email.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                onKeyDown={(e) => e.key === 'Enter' && email.includes('@') && setSubmitted(true)}
+                onKeyDown={(e) => e.key === 'Enter' && handleSubmit()}
                 className="flex-1 px-5 py-4 text-sm outline-none"
                 style={{
                   backgroundColor: '#0E0E14',
@@ -381,19 +411,21 @@ export default function Community() {
                 }}
               />
               <button
-                onClick={() => email.includes('@') && setSubmitted(true)}
+                onClick={handleSubmit}
+                disabled={loading}
                 className="px-6 py-4 text-xs font-semibold transition-colors duration-200"
                 style={{
-                  backgroundColor: '#C4FF47',
+                  backgroundColor: loading ? 'rgba(196,255,71,0.5)' : '#C4FF47',
                   color: '#06060A',
                   letterSpacing: '0.14em',
                   fontFamily: "'DM Sans', sans-serif",
                   whiteSpace: 'nowrap',
+                  cursor: loading ? 'wait' : 'pointer',
                 }}
-                onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#d3ff65' }}
-                onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = '#C4FF47' }}
+                onMouseEnter={(e) => { if (!loading) e.currentTarget.style.backgroundColor = '#d3ff65' }}
+                onMouseLeave={(e) => { if (!loading) e.currentTarget.style.backgroundColor = '#C4FF47' }}
               >
-                JOIN NOW
+                {loading ? '...' : 'JOIN NOW'}
               </button>
             </div>
           )}
