@@ -1,9 +1,9 @@
 import SectionLabel from '../components/SectionLabel'
+import communityImg from '../imports/image-4.png'
 
 const ROAD_IMG =
   'https://images.unsplash.com/photo-1542242476-5a3565835a38?w=1200&h=800&fit=crop&auto=format'
-const DAWN_IMG =
-  'https://images.unsplash.com/photo-1615845522103-82f98cd2a9de?w=900&h=1200&fit=crop&auto=format'
+const DAWN_IMG = communityImg
 
 const LINES = [
   'Das Gefühl von Freiheit.',
