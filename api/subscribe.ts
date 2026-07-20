@@ -17,7 +17,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   try {
     await resend.emails.send({
       from: 'YONDER <onboarding@resend.dev>',
-      to: process.env.NOTIFY_EMAIL ?? '',
+      to: 'melina.borgmann@outlook.de',
       subject: `Neue Anmeldung: ${email}`,
       html: `
         <div style="font-family: sans-serif; background: #06060A; color: #EDEDF2; padding: 40px; max-width: 500px;">
