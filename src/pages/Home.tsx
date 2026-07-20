@@ -17,34 +17,28 @@ const GALLERY_3 =
 const VALUES = [
   {
     num: '01',
-    title: 'ERLEBEN',
-    sub: 'Jeder Tritt bewegt mehr als nur dein Bike.',
-    body: 'Wahre Stärke zeigt sich nicht im Datenfeed. Sie zeigt sich im Moment — wenn du die Grenze überschreitest, die du dir selbst gesetzt hast.',
+    title: 'EXPLORE',
+    statement: 'More than the next kilometer.',
+    lines: ['We ride to discover.', 'New roads. New perspectives.', 'New possibilities.'],
+    body: 'Because every ride has the potential to become more than just training.',
   },
   {
     num: '02',
-    title: 'TEILEN',
-    sub: 'Freundschaften, die im Windschatten entstehen.',
-    body: 'Von den ersten Community Rides bis zu individuellen Coaching-Sessions: bei YONDER wächst du nie allein.',
+    title: 'CONNECT',
+    statement: 'The best stories are experienced together.',
+    lines: ['Conversations become friendships.', 'Friendships become memories.'],
+    body: 'Because people move people.',
   },
   {
     num: '03',
-    title: 'ÜBER-WINDEN',
-    sub: 'Performance und persönliche Entwicklung.',
-    body: 'Unsere Geschichte ist geprägt von unzähligen Kilometern, neuen Freundschaften und der Freude am gemeinsamen Sport.',
+    title: 'EVOLVE',
+    statement: 'Not to become perfect. To grow.',
+    lines: ['Every challenge leaves something behind.', 'More experience. More confidence.'],
+    body: 'Because progress is about discovering more of who you already are.',
   },
 ]
 
-const COACHING_TOPICS = [
-  'Grenzen verschieben – nicht um jeden Preis',
-  'Was Ausdauersport über Resilienz lehrt',
-  'Fokus auf das, was wirklich zählt',
-  'Leistung ohne Leistungsdruck',
-  'Mentale Stärke im Alltag',
-  'Gewohnheiten, die bleiben',
-  'Erfolg ohne Selbstoptimierungswahn',
-  'Vom Sport ins Leben',
-]
+const VALUES_IMG = 'https://images.unsplash.com/photo-1541625602703-5de5c8c1e44f?w=1920&h=700&fit=crop&auto=format'
 
 export default function Home() {
   const [email, setEmail] = useState('')
@@ -83,7 +77,7 @@ export default function Home() {
                 fontFamily: "'DM Sans', sans-serif",
               }}
             >
-              YONDER // 2026
+              &nbsp;&nbsp;
             </span>
           </div>
 
@@ -241,20 +235,13 @@ export default function Home() {
                 }}
               >
                 <p className="text-xl" style={{ color: 'rgba(237,237,242,0.85)', fontWeight: 400 }}>
-                  Bei YONDER geht es darum, deine Leidenschaft für den Sport zu entfachen und dich
-                  auf deiner Reise zu begleiten. Wir glauben, dass wahre Stärke nicht nur in Zahlen
-                  gemessen wird, sondern im Erleben, im Teilen und im Überwinden eigener Grenzen.
+                  Heute dreht sich vieles nur noch um Zahlen. Mehr Watt. Mehr Kilometer. Noch bessere
+                  Ernährung. Noch leichteres Material.
                 </p>
                 <p>
-                  Jeder Tritt bewegt mehr als nur dein Bike — er bewegt auch dich. «Find your Pace
-                  beyond numbers» wurde aus der Überzeugung geboren, dass Coaching mehr sein kann
-                  als nur Trainingspläne.
-                </p>
-                <p>
-                  Wir starteten mit der Vision, eine Community zu schaffen, die Sportler jeden
-                  Niveaus zusammenbringt. Von den ersten Community Rides bis zu individuellen
-                  Coaching-Sessions hat sich YONDER zu einem Ort entwickelt, an dem Performance
-                  und persönliche Entwicklung Hand in Hand gehen.
+                  Dabei gerät oft in Vergessenheit, warum wir überhaupt angefangen haben. Das Gefühl
+                  von Freiheit. Die erste lange Ausfahrt. Neue Freundschaften. Sonnenaufgänge in den
+                  Bergen.
                 </p>
               </div>
 
@@ -272,8 +259,8 @@ export default function Home() {
                     color: '#EDEDF2',
                   }}
                 >
-                  Unsere Geschichte:{' '}
-                  <span style={{ color: '#C4FF47' }}>unzählige Kilometer, neue Freundschaften.</span>
+                  YONDER erinnert daran,{' '}
+                  <span style={{ color: '#C4FF47' }}>was hinter den Zahlen liegt.</span>
                 </p>
                 <Link
                   to="/manifesto"
@@ -295,90 +282,120 @@ export default function Home() {
       </section>
 
       {/* ── Values ───────────────────────────────────────── */}
-      <section className="py-32 md:py-44" style={{ backgroundColor: '#0E0E14' }}>
-        <div className="max-w-7xl mx-auto px-6">
-          <SectionLabel num="02" label="WERTE" />
+      <section style={{ backgroundColor: '#06060A', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+        <div className="max-w-7xl mx-auto px-6 pt-32 md:pt-44 pb-0">
+          <SectionLabel num="02" label="VALUES" />
+        </div>
 
-          <div
-            className="grid grid-cols-1 md:grid-cols-3 mt-20"
-            style={{
-              border: '1px solid rgba(255,255,255,0.06)',
-              gap: 1,
-              backgroundColor: 'rgba(255,255,255,0.06)',
-            }}
-          >
-            {VALUES.map((v) => (
-              <div
-                key={v.num}
-                className="p-10 transition-colors duration-300 cursor-default"
-                style={{ backgroundColor: '#0E0E14' }}
-                onMouseEnter={(e) => {
-                  ;(e.currentTarget as HTMLDivElement).style.backgroundColor = '#131318'
-                }}
-                onMouseLeave={(e) => {
-                  ;(e.currentTarget as HTMLDivElement).style.backgroundColor = '#0E0E14'
+        {/* Three-column editorial grid */}
+        <div
+          className="max-w-7xl mx-auto px-6 mt-20 grid grid-cols-1 md:grid-cols-3"
+          style={{ borderTop: '1px solid rgba(255,255,255,0.07)' }}
+        >
+          {VALUES.map((v, i) => (
+            <div
+              key={v.num}
+              className="group cursor-default transition-colors duration-500"
+              style={{
+                padding: '56px 48px 64px',
+                borderRight: i < 2 ? '1px solid rgba(255,255,255,0.07)' : 'none',
+              }}
+            >
+              {/* Index */}
+              <p
+                style={{
+                  fontFamily: "'DM Sans', sans-serif",
+                  fontSize: 10,
+                  color: 'rgba(196,255,71,0.4)',
+                  letterSpacing: '0.3em',
+                  marginBottom: 32,
                 }}
               >
-                <div
-                  className="h-px mb-10 transition-all duration-500"
-                  style={{ backgroundColor: '#C4FF47', width: 36 }}
-                  ref={(el) => {
-                    if (!el) return
-                    const parent = el.parentElement as HTMLElement
-                    parent.addEventListener('mouseenter', () => {
-                      el.style.width = '100%'
-                    })
-                    parent.addEventListener('mouseleave', () => {
-                      el.style.width = '36px'
-                    })
-                  }}
-                />
-                <p
-                  className="text-xs mb-6"
-                  style={{
-                    color: 'rgba(196,255,71,0.45)',
-                    fontFamily: "'DM Sans', sans-serif",
-                    letterSpacing: '0.28em',
-                  }}
-                >
-                  {v.num}
-                </p>
-                <h3
-                  className="font-bold mb-3 leading-tight"
-                  style={{
-                    fontFamily: "'Bricolage Grotesque', sans-serif",
-                    fontSize: 'clamp(28px, 3vw, 36px)',
-                    fontWeight: 800,
-                    letterSpacing: '-0.025em',
-                    color: '#EDEDF2',
-                    lineHeight: 1.05,
-                  }}
-                >
-                  {v.title}
-                </h3>
-                <p
-                  className="text-sm mb-5"
-                  style={{
-                    color: '#C4FF47',
-                    fontFamily: "'DM Sans', sans-serif",
-                    letterSpacing: '0.04em',
-                    lineHeight: 1.5,
-                  }}
-                >
-                  {v.sub}
-                </p>
-                <p
-                  style={{
-                    color: 'rgba(237,237,242,0.45)',
-                    fontFamily: "'DM Sans', sans-serif",
-                    lineHeight: 1.8,
-                    fontSize: 14,
-                  }}
-                >
-                  {v.body}
-                </p>
+                {v.num}
+              </p>
+
+              {/* Title — dominates the card */}
+              <h3
+                className="transition-colors duration-400"
+                style={{
+                  fontFamily: "'Bricolage Grotesque', sans-serif",
+                  fontSize: 'clamp(52px, 6.5vw, 88px)',
+                  fontWeight: 800,
+                  letterSpacing: '-0.04em',
+                  lineHeight: 0.92,
+                  color: '#EDEDF2',
+                  marginBottom: 36,
+                  transition: 'color 0.4s',
+                }}
+                onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = '#C4FF47' }}
+                onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = '#EDEDF2' }}
+              >
+                {v.title}
+              </h3>
+
+              {/* Divider */}
+              <div style={{ width: 32, height: 1, backgroundColor: 'rgba(196,255,71,0.3)', marginBottom: 28 }} />
+
+              {/* Bold statement */}
+              <p
+                style={{
+                  fontFamily: "'Bricolage Grotesque', sans-serif",
+                  fontSize: 17,
+                  fontWeight: 700,
+                  color: '#EDEDF2',
+                  lineHeight: 1.45,
+                  letterSpacing: '-0.01em',
+                  marginBottom: 20,
+                }}
+              >
+                {v.statement}
+              </p>
+
+              {/* Lines */}
+              <div style={{ marginBottom: 20 }}>
+                {v.lines.map((line) => (
+                  <p
+                    key={line}
+                    style={{
+                      fontFamily: "'DM Sans', sans-serif",
+                      fontSize: 14,
+                      color: 'rgba(237,237,242,0.45)',
+                      lineHeight: 1.8,
+                    }}
+                  >
+                    {line}
+                  </p>
+                ))}
               </div>
-            ))}
+
+              {/* Body */}
+              <p
+                style={{
+                  fontFamily: "'DM Sans', sans-serif",
+                  fontSize: 13,
+                  color: 'rgba(237,237,242,0.28)',
+                  lineHeight: 1.85,
+                  fontStyle: 'italic',
+                }}
+              >
+                {v.body}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        {/* Full-bleed atmospheric image */}
+        <div style={{ position: 'relative', lineHeight: 0, marginTop: 64 }}>
+          <img
+            src={VALUES_IMG}
+            alt="Cyclists at sunrise"
+            style={{ width: '100%', height: '50vh', objectFit: 'cover', objectPosition: 'center 55%', display: 'block', filter: 'grayscale(20%)', opacity: 0.6 }}
+          />
+          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(6,6,10,0.5) 0%, rgba(6,6,10,0.15) 40%, rgba(6,6,10,0.6) 100%)' }} />
+          <div style={{ position: 'absolute', bottom: 32, left: 0, right: 0, display: 'flex', justifyContent: 'center' }}>
+            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 10, color: 'rgba(196,255,71,0.6)', letterSpacing: '0.36em' }}>
+              EXPLORE · CONNECT · EVOLVE
+            </p>
           </div>
         </div>
       </section>
@@ -386,7 +403,7 @@ export default function Home() {
       {/* ── Gallery ──────────────────────────────────────── */}
       <section className="py-32 md:py-44" style={{ backgroundColor: '#06060A' }}>
         <div className="max-w-7xl mx-auto px-6">
-          <SectionLabel num="03" label="MOMENTE — AUS DER COMMUNITY" />
+          <SectionLabel num="03" label="MOMENTE" />
 
           <div className="grid grid-cols-12 gap-3 md:gap-4 mt-20">
             <div
@@ -458,110 +475,6 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── Coaching ─────────────────────────────────────── */}
-      <section
-        className="py-32 md:py-44 border-t"
-        style={{ backgroundColor: '#06060A', borderColor: 'rgba(255,255,255,0.06)' }}
-      >
-        <div className="max-w-7xl mx-auto px-6">
-          <SectionLabel num="04" label="COACHING" />
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-28 mt-20 items-start">
-            <div>
-              <h2
-                className="font-extrabold leading-none mb-8"
-                style={{
-                  fontFamily: "'Bricolage Grotesque', sans-serif",
-                  fontSize: 'clamp(40px, 5vw, 68px)',
-                  fontWeight: 800,
-                  letterSpacing: '-0.035em',
-                  lineHeight: 1.0,
-                }}
-              >
-                <span style={{ color: '#EDEDF2' }}>Auf und</span>
-                <br />
-                <span style={{ color: '#EDEDF2' }}>abseits</span>
-                <br />
-                <span style={{ color: '#C4FF47' }}>des Rads.</span>
-              </h2>
-              <p
-                style={{
-                  fontFamily: "'DM Sans', sans-serif",
-                  fontSize: 16,
-                  color: 'rgba(237,237,242,0.55)',
-                  lineHeight: 1.85,
-                  maxWidth: 420,
-                  marginBottom: 36,
-                }}
-              >
-                Die Fähigkeiten, die wir im Sport entwickeln, helfen uns weit über das Training
-                hinaus. Fokus. Resilienz. Selbstvertrauen. YONDER verbindet sportliche Entwicklung
-                mit persönlichem Wachstum – auf dem Rad, im Beruf und im Alltag.
-              </p>
-              <Link
-                to="/community"
-                className="text-xs transition-colors duration-200"
-                style={{
-                  color: '#C4FF47',
-                  letterSpacing: '0.18em',
-                  fontFamily: "'DM Sans', sans-serif",
-                  borderBottom: '1px solid rgba(196,255,71,0.4)',
-                  paddingBottom: 3,
-                }}
-              >
-                MEHR ZU DEN COACHINGS →
-              </Link>
-            </div>
-
-            <div>
-              <p
-                className="mb-8"
-                style={{
-                  color: '#EDEDF2',
-                  fontFamily: "'Bricolage Grotesque', sans-serif",
-                  fontWeight: 700,
-                  fontSize: 'clamp(20px, 2.2vw, 28px)',
-                  letterSpacing: '-0.02em',
-                }}
-              >
-                Vorträge & Workshops
-              </p>
-              <ul className="space-y-0">
-                {COACHING_TOPICS.map((topic, i) => (
-                  <li
-                    key={i}
-                    className="flex items-center gap-5 py-4 border-b"
-                    style={{ borderColor: 'rgba(255,255,255,0.06)' }}
-                  >
-                    <span
-                      style={{
-                        fontFamily: "'DM Sans', sans-serif",
-                        fontSize: 10,
-                        color: 'rgba(196,255,71,0.4)',
-                        letterSpacing: '0.2em',
-                        minWidth: 24,
-                      }}
-                    >
-                      {String(i + 1).padStart(2, '0')}
-                    </span>
-                    <span
-                      style={{
-                        fontFamily: "'DM Sans', sans-serif",
-                        fontSize: 15,
-                        color: 'rgba(237,237,242,0.7)',
-                        lineHeight: 1.5,
-                      }}
-                    >
-                      {topic}
-                    </span>
-                  </li>
-                ))}
-              </ul>
             </div>
           </div>
         </div>
