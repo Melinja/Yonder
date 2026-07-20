@@ -38,7 +38,6 @@ const VALUES = [
   },
 ]
 
-const VALUES_IMG = 'https://images.unsplash.com/photo-1541625602703-5de5c8c1e44f?w=1920&h=700&fit=crop&auto=format'
 
 export default function Home() {
   const [email, setEmail] = useState('')
@@ -384,20 +383,6 @@ export default function Home() {
           ))}
         </div>
 
-        {/* Full-bleed atmospheric image */}
-        <div style={{ position: 'relative', lineHeight: 0, marginTop: 64 }}>
-          <img
-            src={VALUES_IMG}
-            alt="Cyclists at sunrise"
-            style={{ width: '100%', height: '50vh', objectFit: 'cover', objectPosition: 'center 55%', display: 'block', filter: 'grayscale(20%)', opacity: 0.6 }}
-          />
-          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(6,6,10,0.5) 0%, rgba(6,6,10,0.15) 40%, rgba(6,6,10,0.6) 100%)' }} />
-          <div style={{ position: 'absolute', bottom: 32, left: 0, right: 0, display: 'flex', justifyContent: 'center' }}>
-            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 10, color: 'rgba(196,255,71,0.6)', letterSpacing: '0.36em' }}>
-              EXPLORE · CONNECT · EVOLVE
-            </p>
-          </div>
-        </div>
       </section>
 
       {/* ── Gallery ──────────────────────────────────────── */}
