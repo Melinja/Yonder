@@ -1,5 +1,5 @@
 import React from 'react'
-import communityImg from '../imports/image-5.png'
+import communityImg from '../imports/image-6.png'
 
 // ── Type scale — one system, applied consistently ────────────────
 // XL  88px / weight 800 — Hero, Closing
