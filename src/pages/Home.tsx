@@ -18,23 +18,23 @@ const VALUES = [
   {
     num: '01',
     title: 'EXPLORE',
-    statement: 'More than the next kilometer.',
-    lines: ['We ride to discover.', 'New roads. New perspectives.', 'New possibilities.'],
-    body: 'Because every ride has the potential to become more than just training.',
+    statement: 'Mehr als der nächste Kilometer.',
+    lines: ['Wir fahren, um zu entdecken.', 'Neue Wege. Neue Perspektiven.', 'Neue Möglichkeiten.'],
+    body: 'Weil jede Ausfahrt das Potenzial hat, mehr zu sein als nur Training.',
   },
   {
     num: '02',
     title: 'CONNECT',
-    statement: 'The best stories are experienced together.',
-    lines: ['Conversations become friendships.', 'Friendships become memories.'],
-    body: 'Because people move people.',
+    statement: 'Die besten Geschichten erlebt man zusammen.',
+    lines: ['Gespräche werden zu Freundschaften.', 'Freundschaften werden zu Erinnerungen.'],
+    body: 'Weil Menschen Menschen bewegen.',
   },
   {
     num: '03',
     title: 'EVOLVE',
-    statement: 'Not to become perfect. To grow.',
-    lines: ['Every challenge leaves something behind.', 'More experience. More confidence.'],
-    body: 'Because progress is about discovering more of who you already are.',
+    statement: 'Nicht um perfekt zu werden. Um zu wachsen.',
+    lines: ['Jede Herausforderung hinterlässt etwas.', 'Mehr Erfahrung. Mehr Selbstvertrauen.'],
+    body: 'Weil Fortschritt bedeutet, mehr von dem zu entdecken, was du bereits bist.',
   },
 ]
 
