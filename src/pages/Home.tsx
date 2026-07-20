@@ -42,6 +42,22 @@ const VALUES = [
 export default function Home() {
   const [email, setEmail] = useState('')
   const [submitted, setSubmitted] = useState(false)
+  const [loading, setLoading] = useState(false)
+
+  const handleJoin = async () => {
+    if (!email.includes('@')) return
+    setLoading(true)
+    try {
+      const res = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      })
+      if (res.ok) setSubmitted(true)
+    } finally {
+      setLoading(false)
+    }
+  }
 
   return (
     <>
@@ -564,7 +580,7 @@ export default function Home() {
                   placeholder="deine@email.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  onKeyDown={(e) => e.key === 'Enter' && email.includes('@') && setSubmitted(true)}
+                  onKeyDown={(e) => e.key === 'Enter' && handleJoin()}
                   className="flex-1 px-5 py-4 text-sm outline-none"
                   style={{
                     backgroundColor: '#0E0E14',
@@ -581,7 +597,8 @@ export default function Home() {
                   }}
                 />
                 <button
-                  onClick={() => email.includes('@') && setSubmitted(true)}
+                  onClick={handleJoin}
+                  disabled={loading}
                   className="px-6 py-4 text-xs font-semibold transition-colors duration-200"
                   style={{
                     backgroundColor: '#C4FF47',
