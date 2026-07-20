@@ -81,6 +81,20 @@ export default function Manifesto() {
         </div>
       </section>
 
+      {/* Full-bleed moment */}
+      <div style={{ lineHeight: 0, position: 'relative' }}>
+        <img
+          src="https://images.unsplash.com/photo-1768264260571-f33c3d457587?w=1600&h=900&fit=crop&auto=format"
+          alt="Zwei Fahrer auf verschneiter Bergstraße"
+          style={{ width: '100%', height: '70vh', objectFit: 'cover', objectPosition: 'center', display: 'block' }}
+        />
+        <div style={{ position: 'absolute', bottom: 32, left: 48, right: 48 }}>
+          <p style={{ fontFamily: sans, fontSize: 10, color: 'rgba(196,255,71,0.7)', letterSpacing: '0.28em' }}>
+            ERLEBNISSE, DIE BLEIBEN.
+          </p>
+        </div>
+      </div>
+
       {/* ── AKT II ───────────────────────────────────────── */}
       <section style={{ position: 'relative', padding: '72px 48px' }}>
         <div style={{ position: 'absolute', inset: 0, overflow: 'hidden' }}>
