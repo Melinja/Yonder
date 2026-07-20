@@ -36,14 +36,14 @@ const VALUES = [
 ]
 
 const COACHING_TOPICS = [
-  'Resilienz durch Ausdauersport',
-  'Umgang mit Rückschlägen',
-  'Fokus und Zielsetzung',
-  'Leistungsdruck',
-  'Mentale Stärke',
-  'Nachhaltige Gewohnheiten',
+  'Grenzen verschieben – nicht um jeden Preis',
+  'Was Ausdauersport über Resilienz lehrt',
+  'Fokus auf das, was wirklich zählt',
+  'Leistung ohne Leistungsdruck',
+  'Mentale Stärke im Alltag',
+  'Gewohnheiten, die bleiben',
   'Erfolg ohne Selbstoptimierungswahn',
-  'Transfer von Ausdauersport in Beruf und Führung',
+  'Vom Sport ins Leben',
 ]
 
 export default function Home() {
@@ -499,9 +499,9 @@ export default function Home() {
                   marginBottom: 36,
                 }}
               >
-                Was du auf dem Rad lernst, trägt dich weit über den Sport hinaus. YONDER verbindet
-                athletische Entwicklung mit mentaler Stärke — für Sportler, Führungskräfte und alle,
-                die beides sein wollen.
+                Die Fähigkeiten, die wir im Sport entwickeln, helfen uns weit über das Training
+                hinaus. Fokus. Resilienz. Selbstvertrauen. YONDER verbindet sportliche Entwicklung
+                mit persönlichem Wachstum – auf dem Rad, im Beruf und im Alltag.
               </p>
               <Link
                 to="/community"
