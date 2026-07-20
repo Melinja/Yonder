@@ -1,12 +1,12 @@
 import React from 'react'
 import communityImg from '../imports/image-6.png'
 
-// ── Type scale — one system, applied consistently ────────────────
-// XL  88px / weight 800 — Hero, Closing
-// L   46px / weight 700 — Act headlines
-// M   26px / weight 600 — Pull quotes, sub-headlines
-// S   17px / weight 400 — Body
-// XS  10px / weight 400 — Overlines
+// ── Type scale ───────────────────────────────────────────────────
+// XL  96px  — Hero, Closing
+// L   32px  — Section headlines
+// M   20px  — Sub-headlines, pull quotes
+// S   16px  — Body
+// XS  10px  — Overlines
 
 const display = "'Bricolage Grotesque', sans-serif"
 const sans    = "'DM Sans', sans-serif"
@@ -37,7 +37,7 @@ export default function Manifesto() {
       {/* ── HERO — pure type, no image ───────────────────── */}
       <section style={{ minHeight: '100svh', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', padding: '120px 48px 64px', maxWidth: 1200, margin: '0 auto', width: '100%' }}>
         <Overline>YONDER MANIFEST</Overline>
-        <h1 style={{ fontFamily: display, fontSize: 'clamp(72px, 11vw, 140px)', fontWeight: 800, letterSpacing: '-0.045em', lineHeight: 0.9, color: white }}>
+        <h1 style={{ fontFamily: display, fontSize: 'clamp(52px, 7vw, 96px)', fontWeight: 800, letterSpacing: '-0.045em', lineHeight: 0.9, color: white }}>
           BEYOND<br />
           <span style={{ color: dim3 }}>NUMBERS.</span>
         </h1>
@@ -46,10 +46,10 @@ export default function Manifesto() {
       {/* ── AKT I ────────────────────────────────────────── */}
       <section style={{ borderTop: '1px solid rgba(255,255,255,0.07)', padding: '72px 48px', maxWidth: 1200, margin: '0 auto' }}>
         <div style={{ maxWidth: 720 }}>
-          <p style={{ fontFamily: display, fontSize: 46, fontWeight: 700, letterSpacing: '-0.03em', lineHeight: 1.15, color: white, marginBottom: 16 }}>
+          <p style={{ fontFamily: display, fontSize: 32, fontWeight: 700, letterSpacing: '-0.03em', lineHeight: 1.15, color: white, marginBottom: 16 }}>
             Für fast jede Fahrt gibt es heute eine Zahl.
           </p>
-          <p style={{ fontFamily: display, fontSize: 26, fontWeight: 300, letterSpacing: '-0.02em', lineHeight: 1.4, color: dim2 }}>
+          <p style={{ fontFamily: display, fontSize: 20, fontWeight: 300, letterSpacing: '-0.02em', lineHeight: 1.4, color: dim2 }}>
             Watt. Kilometer. Herzfrequenz. Trainingsbelastung.
           </p>
         </div>
@@ -58,7 +58,7 @@ export default function Manifesto() {
       {/* The turn */}
       <section style={{ backgroundColor: panel, padding: '72px 48px' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-          <p style={{ fontFamily: display, fontSize: 46, fontWeight: 700, letterSpacing: '-0.03em', lineHeight: 1.15, color: white, marginBottom: 40, maxWidth: 680 }}>
+          <p style={{ fontFamily: display, fontSize: 32, fontWeight: 700, letterSpacing: '-0.03em', lineHeight: 1.15, color: white, marginBottom: 40, maxWidth: 680 }}>
             Doch die Momente, die uns prägen,<br />hatten nie eine.
           </p>
           <div style={{ borderLeft: `2px solid ${lime}`, paddingLeft: 28, display: 'flex', flexDirection: 'column', gap: 4 }}>
@@ -67,7 +67,7 @@ export default function Manifesto() {
               'Das Gespräch im Windschatten.',
               'Der Moment, in dem Fremde zu Freunden werden.',
             ].map(l => (
-              <p key={l} style={{ fontFamily: display, fontSize: 26, fontWeight: 400, letterSpacing: '-0.02em', lineHeight: 1.5, color: dim1 }}>{l}</p>
+              <p key={l} style={{ fontFamily: display, fontSize: 20, fontWeight: 400, letterSpacing: '-0.02em', lineHeight: 1.5, color: dim1 }}>{l}</p>
             ))}
           </div>
         </div>
@@ -76,10 +76,10 @@ export default function Manifesto() {
       {/* Pull quote */}
       <section style={{ padding: '80px 48px', borderBottom: '1px solid rgba(255,255,255,0.07)' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-          <p style={{ fontFamily: display, fontSize: 46, fontWeight: 800, letterSpacing: '-0.035em', lineHeight: 1.1, color: white, marginBottom: 8 }}>
+          <p style={{ fontFamily: display, fontSize: 32, fontWeight: 800, letterSpacing: '-0.035em', lineHeight: 1.1, color: white, marginBottom: 8 }}>
             Wir fahren nicht los, um Daten zu sammeln.
           </p>
-          <p style={{ fontFamily: display, fontSize: 46, fontWeight: 800, letterSpacing: '-0.035em', lineHeight: 1.1, color: lime }}>
+          <p style={{ fontFamily: display, fontSize: 32, fontWeight: 800, letterSpacing: '-0.035em', lineHeight: 1.1, color: lime }}>
             Wir fahren los, um etwas zu erleben.
           </p>
         </div>
@@ -93,7 +93,7 @@ export default function Manifesto() {
       {/* YONDER belief */}
       <section style={{ padding: '72px 48px' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto', maxWidth: 760 }}>
-          <p style={{ fontFamily: display, fontSize: 46, fontWeight: 700, letterSpacing: '-0.03em', lineHeight: 1.15, color: white, marginBottom: 32 }}>
+          <p style={{ fontFamily: display, fontSize: 32, fontWeight: 700, letterSpacing: '-0.03em', lineHeight: 1.15, color: white, marginBottom: 32 }}>
             YONDER glaubt an einen Radsport, der Menschen verbindet.
           </p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
@@ -102,7 +102,7 @@ export default function Manifesto() {
               [dim1,  'An Erinnerungen statt Rankings.'],
               [dim2,  'An Gemeinschaft statt Vergleich.'],
             ].map(([c, t]) => (
-              <p key={t as string} style={{ fontFamily: display, fontSize: 26, fontWeight: 600, letterSpacing: '-0.02em', lineHeight: 1.45, color: c as string }}>{t as string}</p>
+              <p key={t as string} style={{ fontFamily: display, fontSize: 20, fontWeight: 600, letterSpacing: '-0.02em', lineHeight: 1.45, color: c as string }}>{t as string}</p>
             ))}
           </div>
         </div>
@@ -110,10 +110,10 @@ export default function Manifesto() {
 
       <section style={{ backgroundColor: panel, padding: '72px 48px' }}>
         <div style={{ maxWidth: 760, margin: '0 auto' }}>
-          <p style={{ fontFamily: display, fontSize: 46, fontWeight: 700, letterSpacing: '-0.03em', lineHeight: 1.15, color: white, marginBottom: 8 }}>
+          <p style={{ fontFamily: display, fontSize: 32, fontWeight: 700, letterSpacing: '-0.03em', lineHeight: 1.15, color: white, marginBottom: 8 }}>
             Nicht gegen Leistung.
           </p>
-          <p style={{ fontFamily: display, fontSize: 46, fontWeight: 700, letterSpacing: '-0.03em', lineHeight: 1.15, color: lime, marginBottom: 40 }}>
+          <p style={{ fontFamily: display, fontSize: 32, fontWeight: 700, letterSpacing: '-0.03em', lineHeight: 1.15, color: lime, marginBottom: 40 }}>
             Aber für Leistung, die Bedeutung hat.
           </p>
           <div style={{ borderLeft: '1px solid rgba(196,255,71,0.3)', paddingLeft: 28, display: 'flex', flexDirection: 'column', gap: 2 }}>
@@ -122,7 +122,7 @@ export default function Manifesto() {
               'Für Geschichten, die weitererzählt werden.',
               'Für Menschen, die gemeinsam wachsen.',
             ].map(l => (
-              <p key={l} style={{ fontFamily: sans, fontSize: 17, fontWeight: 400, lineHeight: 1.75, color: dim1 }}>{l}</p>
+              <p key={l} style={{ fontFamily: sans, fontSize: 16, fontWeight: 400, lineHeight: 1.75, color: dim1 }}>{l}</p>
             ))}
           </div>
         </div>
@@ -134,19 +134,19 @@ export default function Manifesto() {
           <Overline>GENAU HIER BEGINNT YONDER</Overline>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '48px 64px', maxWidth: 900 }}>
             <div>
-              <p style={{ fontFamily: display, fontSize: 26, fontWeight: 700, letterSpacing: '-0.025em', lineHeight: 1.2, color: white, marginBottom: 8 }}>
+              <p style={{ fontFamily: display, fontSize: 20, fontWeight: 700, letterSpacing: '-0.025em', lineHeight: 1.2, color: white, marginBottom: 8 }}>
                 Wir glauben, dass Leistung und Freude kein Widerspruch sind.
               </p>
-              <p style={{ fontFamily: sans, fontSize: 17, color: dim1, lineHeight: 1.8 }}>
+              <p style={{ fontFamily: sans, fontSize: 16, color: dim1, lineHeight: 1.8 }}>
                 Dass Fortschritt nicht bedeutet, immer mehr zu machen. Sondern die richtigen
                 Voraussetzungen zu schaffen, damit Bewegung leichtfällt.
               </p>
             </div>
             <div>
-              <p style={{ fontFamily: display, fontSize: 26, fontWeight: 600, letterSpacing: '-0.025em', lineHeight: 1.2, color: white, marginBottom: 8 }}>
+              <p style={{ fontFamily: display, fontSize: 20, fontWeight: 600, letterSpacing: '-0.025em', lineHeight: 1.2, color: white, marginBottom: 8 }}>
                 Deshalb begleiten wir Menschen auf ihrem individuellen Weg.
               </p>
-              <p style={{ fontFamily: sans, fontSize: 17, color: dim1, lineHeight: 1.8 }}>
+              <p style={{ fontFamily: sans, fontSize: 16, color: dim1, lineHeight: 1.8 }}>
                 Mit Coaching auf und neben dem Rad. Mit Leistungsdiagnostik, die Orientierung
                 schafft statt Druck erzeugt.
               </p>
@@ -173,7 +173,7 @@ export default function Manifesto() {
 
           <Rule />
 
-          <p style={{ fontFamily: sans, fontSize: 17, color: dim1, lineHeight: 1.85, maxWidth: 600 }}>
+          <p style={{ fontFamily: sans, fontSize: 16, color: dim1, lineHeight: 1.85, maxWidth: 600 }}>
             Wer langfristig im Sport wachsen möchte, braucht mehr als Motivation. Es braucht ein
             Rad, das wirklich passt. Ein Training, das zum Leben passt. Und die richtigen Werkzeuge,
             um sich gesund und nachhaltig weiterzuentwickeln.
@@ -191,10 +191,10 @@ export default function Manifesto() {
               [dim2, 'Nicht für Rankings.'],
               [dim2, 'Nicht für Vergleiche.'],
             ].map(([c, t]) => (
-              <p key={t as string} style={{ fontFamily: display, fontSize: 46, fontWeight: 700, letterSpacing: '-0.035em', lineHeight: 1.1, color: c as string }}>{t as string}</p>
+              <p key={t as string} style={{ fontFamily: display, fontSize: 32, fontWeight: 700, letterSpacing: '-0.035em', lineHeight: 1.1, color: c as string }}>{t as string}</p>
             ))}
           </div>
-          <p style={{ fontFamily: display, fontSize: 46, fontWeight: 700, letterSpacing: '-0.035em', lineHeight: 1.1, color: white, marginBottom: 40 }}>
+          <p style={{ fontFamily: display, fontSize: 32, fontWeight: 700, letterSpacing: '-0.035em', lineHeight: 1.1, color: white, marginBottom: 40 }}>
             Sondern für das gute Gefühl, stärker zu werden.
           </p>
           <div style={{ borderLeft: `2px solid ${lime}`, paddingLeft: 28, display: 'flex', flexDirection: 'column', gap: 2, marginBottom: 48 }}>
@@ -203,10 +203,10 @@ export default function Manifesto() {
               'Mehr Selbstvertrauen.',
               'Und für all die Momente, die außerhalb der Komfortzone entstehen.',
             ].map(l => (
-              <p key={l} style={{ fontFamily: display, fontSize: 26, fontWeight: 400, letterSpacing: '-0.02em', lineHeight: 1.45, color: dim1 }}>{l}</p>
+              <p key={l} style={{ fontFamily: display, fontSize: 20, fontWeight: 400, letterSpacing: '-0.02em', lineHeight: 1.45, color: dim1 }}>{l}</p>
             ))}
           </div>
-          <p style={{ fontFamily: sans, fontSize: 17, color: dim1, lineHeight: 1.85, maxWidth: 580 }}>
+          <p style={{ fontFamily: sans, fontSize: 16, color: dim1, lineHeight: 1.85, maxWidth: 580 }}>
             Denn am Ende geht es nicht darum, wie viele Zahlen du gesammelt hast. Sondern darum, was du erlebt hast.
           </p>
         </div>
@@ -215,10 +215,10 @@ export default function Manifesto() {
       {/* ── CLOSING ──────────────────────────────────────── */}
       <section style={{ minHeight: '60vh', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '80px 48px', borderTop: '1px solid rgba(255,255,255,0.07)' }}>
         <div style={{ textAlign: 'center' }}>
-          <p style={{ fontFamily: display, fontSize: 26, fontWeight: 400, letterSpacing: '-0.02em', color: dim1, marginBottom: 8 }}>
+          <p style={{ fontFamily: display, fontSize: 20, fontWeight: 400, letterSpacing: '-0.02em', color: dim1, marginBottom: 8 }}>
             Darum fahren wir weiter.
           </p>
-          <p style={{ fontFamily: display, fontSize: 'clamp(72px, 11vw, 140px)', fontWeight: 800, letterSpacing: '-0.045em', lineHeight: 0.9, color: lime }}>
+          <p style={{ fontFamily: display, fontSize: 'clamp(52px, 7vw, 96px)', fontWeight: 800, letterSpacing: '-0.045em', lineHeight: 0.9, color: lime }}>
             BEYOND<br />NUMBERS.
           </p>
         </div>
