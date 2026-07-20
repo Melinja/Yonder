@@ -4,6 +4,7 @@ import YonderMark from './YonderMark'
 
 const NAV_LINKS = [
   { label: 'MANIFESTO', to: '/manifesto' },
+  { label: 'COACHINGS', to: '/coachings' },
   { label: 'COMMUNITY', to: '/community' },
   { label: 'EVENTS', to: '/events' },
 ]
