@@ -520,14 +520,16 @@ export default function Home() {
 
             <div>
               <p
-                className="text-xs mb-8"
+                className="mb-8"
                 style={{
-                  color: 'rgba(237,237,242,0.28)',
-                  fontFamily: "'DM Sans', sans-serif",
-                  letterSpacing: '0.22em',
+                  color: '#EDEDF2',
+                  fontFamily: "'Bricolage Grotesque', sans-serif",
+                  fontWeight: 700,
+                  fontSize: 'clamp(20px, 2.2vw, 28px)',
+                  letterSpacing: '-0.02em',
                 }}
               >
-                VORTRÄGE & WORKSHOPS
+                Vorträge & Workshops
               </p>
               <ul className="space-y-0">
                 {COACHING_TOPICS.map((topic, i) => (
