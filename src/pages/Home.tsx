@@ -17,22 +17,33 @@ const GALLERY_3 =
 const VALUES = [
   {
     num: '01',
-    title: 'FREIHEIT',
-    sub: 'Das Gefühl, das nur ein Fahrrad geben kann.',
-    body: 'Kein Stau. Kein Algorithmus. Nur du, die Straße und der Horizont, der niemals endet.',
+    title: 'ERLEBEN',
+    sub: 'Jeder Tritt bewegt mehr als nur dein Bike.',
+    body: 'Wahre Stärke zeigt sich nicht im Datenfeed. Sie zeigt sich im Moment — wenn du die Grenze überschreitest, die du dir selbst gesetzt hast.',
   },
   {
     num: '02',
-    title: 'GEMEIN-SCHAFT',
+    title: 'TEILEN',
     sub: 'Freundschaften, die im Windschatten entstehen.',
-    body: 'Die besten Gespräche passieren auf langen Ausfahrten. Menschen, die gemeinsam wachsen.',
+    body: 'Von den ersten Community Rides bis zu individuellen Coaching-Sessions: bei YONDER wächst du nie allein.',
   },
   {
     num: '03',
-    title: 'ABENTEUER',
-    sub: 'Was hinter der nächsten Kurve wartet.',
-    body: 'Unbekannte Pässe. Spontane Routen. Die Gewissheit, dass das Beste noch kommt.',
+    title: 'ÜBER-WINDEN',
+    sub: 'Performance und persönliche Entwicklung.',
+    body: 'Unsere Geschichte ist geprägt von unzähligen Kilometern, neuen Freundschaften und der Freude am gemeinsamen Sport.',
   },
+]
+
+const COACHING_TOPICS = [
+  'Resilienz durch Ausdauersport',
+  'Umgang mit Rückschlägen',
+  'Fokus und Zielsetzung',
+  'Leistungsdruck',
+  'Mentale Stärke',
+  'Nachhaltige Gewohnheiten',
+  'Erfolg ohne Selbstoptimierungswahn',
+  'Transfer von Ausdauersport in Beruf und Führung',
 ]
 
 export default function Home() {
@@ -230,13 +241,20 @@ export default function Home() {
                 }}
               >
                 <p className="text-xl" style={{ color: 'rgba(237,237,242,0.85)', fontWeight: 400 }}>
-                  Heute dreht sich vieles nur noch um Zahlen. Mehr Watt. Mehr Kilometer. Noch bessere
-                  Ernährung. Noch leichteres Material.
+                  Bei YONDER geht es darum, deine Leidenschaft für den Sport zu entfachen und dich
+                  auf deiner Reise zu begleiten. Wir glauben, dass wahre Stärke nicht nur in Zahlen
+                  gemessen wird, sondern im Erleben, im Teilen und im Überwinden eigener Grenzen.
                 </p>
                 <p>
-                  Dabei gerät oft in Vergessenheit, warum wir überhaupt angefangen haben. Das Gefühl
-                  von Freiheit. Die erste lange Ausfahrt. Neue Freundschaften. Sonnenaufgänge in den
-                  Bergen.
+                  Jeder Tritt bewegt mehr als nur dein Bike — er bewegt auch dich. «Find your Pace
+                  beyond numbers» wurde aus der Überzeugung geboren, dass Coaching mehr sein kann
+                  als nur Trainingspläne.
+                </p>
+                <p>
+                  Wir starteten mit der Vision, eine Community zu schaffen, die Sportler jeden
+                  Niveaus zusammenbringt. Von den ersten Community Rides bis zu individuellen
+                  Coaching-Sessions hat sich YONDER zu einem Ort entwickelt, an dem Performance
+                  und persönliche Entwicklung Hand in Hand gehen.
                 </p>
               </div>
 
@@ -254,8 +272,8 @@ export default function Home() {
                     color: '#EDEDF2',
                   }}
                 >
-                  YONDER erinnert daran,{' '}
-                  <span style={{ color: '#C4FF47' }}>was hinter den Zahlen liegt.</span>
+                  Unsere Geschichte:{' '}
+                  <span style={{ color: '#C4FF47' }}>unzählige Kilometer, neue Freundschaften.</span>
                 </p>
                 <Link
                   to="/manifesto"
@@ -368,7 +386,7 @@ export default function Home() {
       {/* ── Gallery ──────────────────────────────────────── */}
       <section className="py-32 md:py-44" style={{ backgroundColor: '#06060A' }}>
         <div className="max-w-7xl mx-auto px-6">
-          <SectionLabel num="03" label="MOMENTE" />
+          <SectionLabel num="03" label="MOMENTE — AUS DER COMMUNITY" />
 
           <div className="grid grid-cols-12 gap-3 md:gap-4 mt-20">
             <div
@@ -440,6 +458,108 @@ export default function Home() {
                   </p>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Coaching ─────────────────────────────────────── */}
+      <section
+        className="py-32 md:py-44 border-t"
+        style={{ backgroundColor: '#06060A', borderColor: 'rgba(255,255,255,0.06)' }}
+      >
+        <div className="max-w-7xl mx-auto px-6">
+          <SectionLabel num="04" label="COACHING" />
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-28 mt-20 items-start">
+            <div>
+              <h2
+                className="font-extrabold leading-none mb-8"
+                style={{
+                  fontFamily: "'Bricolage Grotesque', sans-serif",
+                  fontSize: 'clamp(40px, 5vw, 68px)',
+                  fontWeight: 800,
+                  letterSpacing: '-0.035em',
+                  lineHeight: 1.0,
+                }}
+              >
+                <span style={{ color: '#EDEDF2' }}>Auf und</span>
+                <br />
+                <span style={{ color: '#EDEDF2' }}>abseits</span>
+                <br />
+                <span style={{ color: '#C4FF47' }}>des Rads.</span>
+              </h2>
+              <p
+                style={{
+                  fontFamily: "'DM Sans', sans-serif",
+                  fontSize: 16,
+                  color: 'rgba(237,237,242,0.55)',
+                  lineHeight: 1.85,
+                  maxWidth: 420,
+                  marginBottom: 36,
+                }}
+              >
+                Was du auf dem Rad lernst, trägt dich weit über den Sport hinaus. YONDER verbindet
+                athletische Entwicklung mit mentaler Stärke — für Sportler, Führungskräfte und alle,
+                die beides sein wollen.
+              </p>
+              <Link
+                to="/community"
+                className="text-xs transition-colors duration-200"
+                style={{
+                  color: '#C4FF47',
+                  letterSpacing: '0.18em',
+                  fontFamily: "'DM Sans', sans-serif",
+                  borderBottom: '1px solid rgba(196,255,71,0.4)',
+                  paddingBottom: 3,
+                }}
+              >
+                MEHR ZU DEN COACHINGS →
+              </Link>
+            </div>
+
+            <div>
+              <p
+                className="text-xs mb-8"
+                style={{
+                  color: 'rgba(237,237,242,0.28)',
+                  fontFamily: "'DM Sans', sans-serif",
+                  letterSpacing: '0.22em',
+                }}
+              >
+                VORTRÄGE & WORKSHOPS
+              </p>
+              <ul className="space-y-0">
+                {COACHING_TOPICS.map((topic, i) => (
+                  <li
+                    key={i}
+                    className="flex items-center gap-5 py-4 border-b"
+                    style={{ borderColor: 'rgba(255,255,255,0.06)' }}
+                  >
+                    <span
+                      style={{
+                        fontFamily: "'DM Sans', sans-serif",
+                        fontSize: 10,
+                        color: 'rgba(196,255,71,0.4)',
+                        letterSpacing: '0.2em',
+                        minWidth: 24,
+                      }}
+                    >
+                      {String(i + 1).padStart(2, '0')}
+                    </span>
+                    <span
+                      style={{
+                        fontFamily: "'DM Sans', sans-serif",
+                        fontSize: 15,
+                        color: 'rgba(237,237,242,0.7)',
+                        lineHeight: 1.5,
+                      }}
+                    >
+                      {topic}
+                    </span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>
