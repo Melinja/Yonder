@@ -124,8 +124,8 @@ export default function About() {
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 32, paddingTop: 8 }}>
             {[
-              { num: '4.200', label: 'Kilometer' },
-              { num: '60.000', label: 'Höhenmeter' },
+              { num: '1.300', label: 'Kilometer' },
+              { num: '30.000', label: 'Höhenmeter' },
               { num: '100 %', label: 'Unsupported' },
             ].map(({ num, label }) => (
               <div key={label} style={{ borderTop: '1px solid rgba(255,255,255,0.07)', paddingTop: 20 }}>
