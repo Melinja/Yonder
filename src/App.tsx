@@ -8,6 +8,7 @@ import Community from './pages/Community'
 import Events from './pages/Events'
 import LogoExploration from './pages/LogoExploration'
 import Coachings from './pages/Coachings'
+import About from './pages/About'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -29,6 +30,7 @@ export default function App() {
           <Route path="/coachings" element={<Coachings />} />
           <Route path="/community" element={<Community />} />
           <Route path="/events" element={<Events />} />
+          <Route path="/about" element={<About />} />
           <Route path="/logo" element={<LogoExploration />} />
           <Route path="*" element={<Home />} />
         </Routes>

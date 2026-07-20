@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import YonderMark from './YonderMark'
 
 const LINKS = [
-  { label: 'Über uns', to: '/manifesto' },
+  { label: 'Über uns', to: '/about' },
   { label: 'Community', to: '/community' },
   { label: 'Events', to: '/events' },
   { label: 'Kontakt', to: '/community' },
