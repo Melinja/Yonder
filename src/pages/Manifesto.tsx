@@ -43,53 +43,6 @@ export default function Manifesto() {
         </h1>
       </section>
 
-      {/* ── AKT I ────────────────────────────────────────── */}
-      <section style={{ borderTop: '1px solid rgba(255,255,255,0.07)', padding: '72px 48px', maxWidth: 1200, margin: '0 auto' }}>
-        <div style={{ maxWidth: 720 }}>
-          <p style={{ fontFamily: display, fontSize: 32, fontWeight: 700, letterSpacing: '-0.03em', lineHeight: 1.15, color: white, marginBottom: 16 }}>
-            Für fast jede Fahrt gibt es heute eine Zahl.
-          </p>
-          <p style={{ fontFamily: display, fontSize: 20, fontWeight: 300, letterSpacing: '-0.02em', lineHeight: 1.4, color: dim2 }}>
-            Watt. Kilometer. Herzfrequenz. Trainingsbelastung.
-          </p>
-        </div>
-      </section>
-
-      {/* The turn */}
-      <section style={{ backgroundColor: panel, padding: '72px 48px' }}>
-        <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-          <p style={{ fontFamily: display, fontSize: 32, fontWeight: 700, letterSpacing: '-0.03em', lineHeight: 1.15, color: white, marginBottom: 40, maxWidth: 680 }}>
-            Doch die Momente, die uns prägen,<br />hatten nie eine.
-          </p>
-          <div style={{ borderLeft: `2px solid ${lime}`, paddingLeft: 28, display: 'flex', flexDirection: 'column', gap: 4 }}>
-            {[
-              'Die erste Ausfahrt bei Sonnenaufgang.',
-              'Das Gespräch im Windschatten.',
-              'Der Moment, in dem Fremde zu Freunden werden.',
-            ].map(l => (
-              <p key={l} style={{ fontFamily: display, fontSize: 20, fontWeight: 400, letterSpacing: '-0.02em', lineHeight: 1.5, color: dim1 }}>{l}</p>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Pull quote */}
-      <section style={{ padding: '80px 48px', borderBottom: '1px solid rgba(255,255,255,0.07)' }}>
-        <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-          <p style={{ fontFamily: display, fontSize: 32, fontWeight: 800, letterSpacing: '-0.035em', lineHeight: 1.1, color: white, marginBottom: 8 }}>
-            Wir fahren nicht los, um Daten zu sammeln.
-          </p>
-          <p style={{ fontFamily: display, fontSize: 32, fontWeight: 800, letterSpacing: '-0.035em', lineHeight: 1.1, color: lime }}>
-            Wir fahren los, um etwas zu erleben.
-          </p>
-        </div>
-      </section>
-
-      {/* Full-bleed image */}
-      <div style={{ lineHeight: 0 }}>
-        <img src={communityImg} alt="YONDER Community" style={{ width: '100%', height: '60vh', objectFit: 'cover', objectPosition: 'center 30%', display: 'block' }} />
-      </div>
-
       {/* YONDER belief */}
       <section style={{ padding: '72px 48px' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto', maxWidth: 760 }}>
