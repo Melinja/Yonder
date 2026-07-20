@@ -69,34 +69,36 @@ export default function Manifesto() {
       </section>
 
       {/* ── Opening ────────────────────────────────── */}
-      <section className="py-24 md:py-36" style={{ backgroundColor: '#06060A' }}>
+      <section className="py-24 md:py-40" style={{ backgroundColor: '#06060A' }}>
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-3xl">
-            <p
-              className="mb-8"
-              style={{
-                fontFamily: "'Bricolage Grotesque', sans-serif",
-                fontSize: 'clamp(26px, 3.5vw, 44px)',
-                fontWeight: 700,
-                letterSpacing: '-0.02em',
-                lineHeight: 1.2,
-                color: '#EDEDF2',
-              }}
-            >
-              Der Radsport hat sich verändert.
-            </p>
-            <p
-              className="text-xl"
-              style={{
-                color: 'rgba(237,237,242,0.55)',
-                fontFamily: "'DM Sans', sans-serif",
-                lineHeight: 1.85,
-                fontWeight: 300,
-              }}
-            >
-              Heute scheint sich vieles nur noch um Zahlen zu drehen. Mehr Watt. Mehr Kilometer.
-              Mehr Training. Mehr Aerodynamik. Noch bessere Ernährung. Noch leichteres Material.
-            </p>
+            {[
+              { text: 'Es war nie nur eine Zahl.', weight: 700, color: '#EDEDF2', size: 'clamp(28px, 3.8vw, 52px)' },
+              { text: 'Nicht die Wattwerte.', weight: 300, color: 'rgba(237,237,242,0.35)', size: 'clamp(22px, 2.8vw, 38px)' },
+              { text: 'Nicht die Durchschnittsgeschwindigkeit.', weight: 300, color: 'rgba(237,237,242,0.28)', size: 'clamp(22px, 2.8vw, 38px)' },
+              { text: 'Nicht die Platzierung in der Rangliste.', weight: 300, color: 'rgba(237,237,242,0.22)', size: 'clamp(22px, 2.8vw, 38px)' },
+              { text: 'Es sind die Geschichten hinter jeder Fahrt.', weight: 600, color: '#EDEDF2', size: 'clamp(26px, 3.4vw, 46px)' },
+              { text: 'Die Wege, die wir entdecken.', weight: 400, color: 'rgba(237,237,242,0.65)', size: 'clamp(22px, 2.8vw, 38px)' },
+              { text: 'Die Menschen, die wir treffen.', weight: 400, color: 'rgba(237,237,242,0.65)', size: 'clamp(22px, 2.8vw, 38px)' },
+              { text: 'Und die Erinnerungen, die bleiben.', weight: 400, color: 'rgba(237,237,242,0.65)', size: 'clamp(22px, 2.8vw, 38px)' },
+              { text: 'Darum gehen wir weiter.', weight: 800, color: '#EDEDF2', size: 'clamp(28px, 3.8vw, 52px)' },
+              { text: 'Beyond Numbers.', weight: 800, color: '#C4FF47', size: 'clamp(28px, 3.8vw, 52px)' },
+            ].map(({ text, weight, color, size }, i) => (
+              <p
+                key={i}
+                style={{
+                  fontFamily: "'Bricolage Grotesque', sans-serif",
+                  fontSize: size,
+                  fontWeight: weight,
+                  letterSpacing: '-0.025em',
+                  lineHeight: 1.25,
+                  color,
+                  marginBottom: i === 3 || i === 8 ? '1.4em' : '0.15em',
+                }}
+              >
+                {text}
+              </p>
+            ))}
           </div>
         </div>
       </section>
